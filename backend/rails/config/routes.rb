@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
+
+  # Devise token authentication
+  mount_devise_token_auth_for 'User', at: 'auth'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

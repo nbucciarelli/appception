@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.base_protocol = 'http://'
+  config.base_url = "localhost:3000"
+  config.base_root = config.base_protocol + config.base_url
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -38,4 +41,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Devise
+  # TODO: create global variables for these configurations
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Sets the exception format to JSON
+  config.debug_exception_response_format = :api
+
 end
